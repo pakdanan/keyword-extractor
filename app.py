@@ -1,7 +1,7 @@
 import streamlit as st
 from keybert import KeyBERT
 
-doc = """
+sample_text = """
     Computer Science is the study of computers and computational systems.
     Unlike electrical and computer engineers, computer scientists deal mostly
     with software and software systems; this includes their theory, design,
@@ -18,9 +18,9 @@ doc = """
     solve them – to the tangible – designing applications that perform well
     on handheld devices, that are easy to use, and that uphold security measures.
 """
-text = st.text_area(label="Enter text", value=doc)
+text = st.text_area(label="Enter text", value=sample_text)
 btnResult = st.form_submit_button('Extract Keywords')
 if btnResult:
     kw_model = KeyBERT()
-    keywords = kw_model.extract_keywords(doc, keyphrase_ngram_range=(1, 2))
+    keywords = kw_model.extract_keywords(text, keyphrase_ngram_range=(1, 2),use_maxsum=True, nr_candidates=20, top_n=5)
     st.write(keywords)
