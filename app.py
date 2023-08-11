@@ -18,7 +18,9 @@ doc = """
     solve them – to the tangible – designing applications that perform well
     on handheld devices, that are easy to use, and that uphold security measures.
 """
-
-kw_model = KeyBERT()
-keywords = kw_model.extract_keywords(doc, keyphrase_ngram_range=(1, 2))
-st.write(keywords)
+text = st.text_area(label="Enter text", value=doc)
+btnResult = st.form_submit_button('Extract Keywords')
+if btnResult:
+    kw_model = KeyBERT()
+    keywords = kw_model.extract_keywords(doc, keyphrase_ngram_range=(1, 2))
+    st.write(keywords)
