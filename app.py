@@ -21,4 +21,4 @@ doc = """
 
 kw_model = KeyBERT()
 keywords = kw_model.extract_keywords(doc, keyphrase_ngram_range=(1, 2))
-st.text(keywords)
+st.write(keywords)
