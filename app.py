@@ -19,7 +19,7 @@ sample_text = """
     on handheld devices, that are easy to use, and that uphold security measures.
 """
 text = st.text_area(label="Enter text", value=sample_text)
-btnResult = st.form_submit_button('Extract Keywords')
+btnResult = st.button('Extract Keywords')
 if btnResult:
     kw_model = KeyBERT()
     keywords = kw_model.extract_keywords(text, keyphrase_ngram_range=(1, 2),use_maxsum=True, nr_candidates=20, top_n=5)
