@@ -6,7 +6,8 @@ chosen_model = st.selectbox(
     ('all-MiniLM-L6-v2', 'paraphrase-multilingual-MiniLM-L12-v2', 'paraphrase-mpnet-base-v2','paraphrase-multilingual-mpnet-base-v2'))
 
 sample_text = 
-    """Computer Science is the study of computers and computational systems.
+    """
+    Computer Science is the study of computers and computational systems.
     Unlike electrical and computer engineers, computer scientists deal mostly
     with software and software systems; this includes their theory, design,
     development, and application. Principal areas of study within Computer
@@ -20,7 +21,8 @@ sample_text =
     scientists encounter range from the abstract-- determining what problems
     can be solved with computers and the complexity of the algorithms that
     solve them – to the tangible – designing applications that perform well
-    on handheld devices, that are easy to use, and that uphold security measures."""
+    on handheld devices, that are easy to use, and that uphold security measures.
+    """
 
 text = st.text_area(label="Enter text", value=sample_text)
 
