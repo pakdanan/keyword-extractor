@@ -21,6 +21,6 @@ sample_text = """
 text = st.text_area(label="Enter text", value=sample_text)
 btnResult = st.button('Extract Keywords')
 if btnResult:
-    kw_model = KeyBERT()
+    kw_model = KeyBERT('paraphrase-multilingual-mpnet-base-v2')
     keywords = kw_model.extract_keywords(text, keyphrase_ngram_range=(1, 2),use_maxsum=True, nr_candidates=20, top_n=5)
     st.write(keywords)
