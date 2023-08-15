@@ -1,6 +1,8 @@
 import streamlit as st
 from keybert import KeyBERT
 
+st.header('Keywords Extraction')
+
 chosen_model = st.selectbox(
     'Model',
     ('all-MiniLM-L6-v2', 'paraphrase-multilingual-MiniLM-L12-v2', 'paraphrase-mpnet-base-v2','paraphrase-multilingual-mpnet-base-v2'))
